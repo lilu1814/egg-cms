@@ -98,4 +98,14 @@ module.exports = app => {
     put: 'blog:friendlyLink:update',
     delete: 'blog:friendlyLink:delete'
   }), controller[app.config.public].admin.blog.friendlyLink); // 友情链接路由
+  
+  /**
+     * 视频模块
+     */
+  router.resources('video', `/api/${app.config.public}/admin/video/vlog`, app.middleware.auth({
+    get: 'video:vlog:list',
+    post: 'video:vlog:add',
+    put: 'video:vlog:update',
+    delete: 'video:vlog:delete'
+  }), controller[app.config.public].admin.video.vlog); // 文章路由
 };

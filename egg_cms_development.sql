@@ -550,3 +550,20 @@ INSERT INTO `users` VALUES (1, 1, 'admin', 'admin', '1', '$2a$10$DASIjFwPy4yRRcP
 INSERT INTO `users` VALUES (2, 2, 'test', 'test', '0', '$2a$10$eV0xA14rp33w5Ai0HEzn..7eG6GY7Bq9iFvRRqVivZ50CVYXUMXXK', '/uploads/2/CHP_1612249060086_16f194d7b8580d2950c33ab2c9e549d2.jpg', NULL, NULL, '0', '1', NULL, '2021-01-23 09:36:27', 'admin', '2021-02-02 17:10:14', 'test');
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+DROP TABLE IF EXISTS `videos`;
+CREATE TABLE `videos`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userId` int(11) NOT NULL COMMENT '用户id',
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '标题',
+  `subTitle` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '副标题',
+  `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '类型',
+  `hot` int(11) NULL DEFAULT 0 COMMENT '热度',
+  `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '内容',
+	`url` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '内容',
+  `createdAt` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  `createdBy` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建者',
+  `updatedAt` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `updatedBy` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '更新者',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;

@@ -30,6 +30,7 @@ class BaseService extends Service {
         }
       }
     }
+    console.log('##################################################',this.modelName,JSON.stringify(this.ctx.model))
     return await this.ctx.model[this.modelName].findAndCountAll(obj);
   }
 

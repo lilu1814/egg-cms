@@ -6,8 +6,8 @@ const BaseController = require("../../base");
 class Controller extends BaseController {
   constructor(...arg) {
     super(...arg)
-    this.serviceName = 'article'
-    this.modleName = 'blog'
+    this.serviceName = 'vlog'
+    this.modleName = 'video'
   }
   // 查询
   async index() {
